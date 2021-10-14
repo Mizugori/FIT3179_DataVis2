@@ -1,0 +1,15 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+    "height": 500,
+    "title": "Bushfires in Eastern Australia, FROM_DATE to TO_DATE",
+    "projection": {"type":"mercator"},
+    "layer": [
+      {
+        "data": {
+          "url": "../data/AusTopo.geo.json",
+          "format": {"type": "json"}
+        },
+        "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
+      }]
+}
