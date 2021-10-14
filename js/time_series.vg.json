@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+    "height": 600,
+    "title": "INSERT TITLE",
+    "layer": [
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/Mizugori/FIT3179_DataVis2/master/data/fire_nrt_M6_96619.csv"
+        },
+        "transform": [
+            {"filter": "datum.latitude < -13 && datum.latitude > -15 && datum.longitude > 143 && datum.latitude < 144"}
+        ],
+        "mark": {"type": "line", "tooltip": {"content": "data"}},
+        "encoding": {
+          "x": {"field":"acq_date", 
+                "type": "temporal",
+                "timeUnit": {"unit": "yearmonthdate"},
+                "axis":{"format": "%b/%d/%Y"}
+            },
+          "y": {"aggregate":"mean", "field": "brightness"},
+          "color": {"field": ""}
+        }
+      }
+    ]
+  }
