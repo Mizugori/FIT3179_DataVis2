@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json", 
   "data": {
-    "url": "https://raw.githubusercontent.com/Mizugori/FIT3179_DataVis2/master/data/fire_nrt_M6_96619.csv"
+    "url": "https://raw.githubusercontent.com/Mizugori/FIT3179_DataVis2/master/data/fire_archive_M6_96619.csv"
   },
   "vconcat": [
     {
@@ -18,7 +18,6 @@
         {
           "mark": {"type": "circle", "tooltip": {"content": "data"}},
           "transform": [
-            {"calculate": "datum.scan*datum.track", "as": "pixel_area"},
             {"filter": {"param": "time_brush"}}
           ],
           "encoding": {
