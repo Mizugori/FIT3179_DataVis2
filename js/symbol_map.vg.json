@@ -17,7 +17,7 @@
         "url": "https://raw.githubusercontent.com/Mizugori/FIT3179_DataVis2/master/data/fire_nrt_M6_96619.csv"
       },
       "mark": {"type": "circle", "tooltip": {"content": "data"}},
-      
+      "transform": [{"calculate": "datum.scan*datum.track", "as": "pixel_area"}],
       "encoding": {
         "longitude": {"field": "longitude", "type": "quantitative"},
         "latitude": {"field": "latitude", "type": "quantitative"},
@@ -28,8 +28,7 @@
         },
         "opacity": {
           "field": "confidence",
-          "type": "quantitative",
-          "scale": {"scheme": "reds"}
+          "type": "quantitative"
         }
       }
     }

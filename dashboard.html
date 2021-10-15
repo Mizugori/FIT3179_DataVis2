@@ -12,37 +12,24 @@
 
     <div id="symbol_map"></div>
 
-    <script type="text/javascript"> 
+    <div id="bushfire_count"></div>
+  
+    <div id="time_series"></div>
+    
+    <div id="combined_graph"></div>
 
-        var fig = "js/symbol_map.vg.json"
-        vegaEmbed('#symbol_map', fig).then((result)=>{
-            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-        }).catch(console.error);
-    </script>
+<script type="text/javascript"> 
 
-    <!-- <div id="bushfire_count"></div>
-    <script type="text/javascript">
-        var filter_fig = "js/bushfire_count_timeseries.vg.json"
-        vegaEmbed("#bushfire_count", filter_fig).then((result)=>{
-            // Just a placeholder
-        }).catch(console.error)
-    </script> -->
+  var fig = "js/symbol_map.vg.json"
+  var fig2 = "js/bushfire_count_timeseries.vg.json"
+  var fig3 = "js/time_series.vg.json"
+  var fig4 = "js/vconcat.vg.json"
 
-    <!-- <div class="slidecontainer">
-        Period begin date <input type="range" min="0" max="100" value="0" class="slider" id="min_date">
-    </div>
+  // vegaEmbed('#symbol_map', fig).then((result)=>{}).catch(console.error)
+  // vegaEmbed("#bushfire_count", fig2).then((result)=>{}).catch(console.error)
+  // vegaEmbed("#time_series", fig3).then((result)=>{}).catch(console.error)
+  vegaEmbed("#combined_graph", fig4).then((result)=>{}).catch(console.error)
 
-    <div class="slidecontainer">
-        Period end date <input type="range" min="0" max="100" value="0" class="slider" id="max_date">
-    </div> -->
-
-    <!-- <div id="time_series"></div>
-    <script type="text/javascript">
-        var fig2 = "js/time_series.vg.json"
-        vegaEmbed("#time_series", fig2).then((result)=>{
-            // Just a placeholder
-        }).catch(console.error)
-    </script> -->
-
+</script>
 </body>
 </html>
