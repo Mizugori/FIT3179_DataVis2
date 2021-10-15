@@ -1,36 +1,37 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 800,
-    "height": 600,
-    "title": "Bushfires in Australia, FROM_DATE to TO_DATE",
-    "projection": {"type":"mercator"},
-    "layer": [
-      {
-        "data": {
-          "url": "https://raw.githubusercontent.com/Mizugori/FIT3179_DataVis2/master/data/AusGeo.geo.json",
-          "format": {"type": "json"}
-        },
-        "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 600,
+  "title": "Bushfires in Australia, FROM_DATE to TO_DATE",
+  "projection": {"type":"mercator"},
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/Mizugori/FIT3179_DataVis2/master/data/AusGeo.geo.json",
+        "format": {"type": "json"}
       },
-      {
-        "data": {
-          "url": "https://raw.githubusercontent.com/Mizugori/FIT3179_DataVis2/master/data/fire_nrt_M6_96619.csv"
+      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/Mizugori/FIT3179_DataVis2/master/data/fire_nrt_M6_96619.csv"
+      },
+      "mark": {"type": "circle", "tooltip": {"content": "data"}},
+      
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "color": {
+          "field": "brightness",
+          "type": "quantitative",
+          "scale": {"scheme": "viridis"}
         },
-        "mark": {"type": "circle", "tooltip": {"content": "data"}},
-        "encoding": {
-          "longitude": {"field": "longitude", "type": "quantitative"},
-          "latitude": {"field": "latitude", "type": "quantitative"},
-          "color": {
-            "field": "brightness",
-            "type": "quantitative",
-            "scale": {"scheme": "viridis"}
-          },
-          "opacity": {
-            "field": "confidence",
-            "type": "quantitative",
-            "scale": {"scheme": "reds"}
-          }
+        "opacity": {
+          "field": "confidence",
+          "type": "quantitative",
+          "scale": {"scheme": "reds"}
         }
       }
-    ]
-  }
+    }
+  ]
+}

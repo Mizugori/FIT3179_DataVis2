@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+</head>
+<body>
+
+    <div id="symbol_map"></div>
+
+    <script type="text/javascript"> 
+
+        var fig = "js/symbol_map.vg.json"
+        vegaEmbed('#symbol_map', fig).then((result)=>{
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+    </script>
+
+    <!-- <div id="bushfire_count"></div>
+    <script type="text/javascript">
+        var filter_fig = "js/bushfire_count_timeseries.vg.json"
+        vegaEmbed("#bushfire_count", filter_fig).then((result)=>{
+            // Just a placeholder
+        }).catch(console.error)
+    </script> -->
+
+    <!-- <div class="slidecontainer">
+        Period begin date <input type="range" min="0" max="100" value="0" class="slider" id="min_date">
+    </div>
+
+    <div class="slidecontainer">
+        Period end date <input type="range" min="0" max="100" value="0" class="slider" id="max_date">
+    </div> -->
+
+    <!-- <div id="time_series"></div>
+    <script type="text/javascript">
+        var fig2 = "js/time_series.vg.json"
+        vegaEmbed("#time_series", fig2).then((result)=>{
+            // Just a placeholder
+        }).catch(console.error)
+    </script> -->
+
+</body>
+</html>
