@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 800,
-  "height": 600,
-  "title": "Bushfires in Australia, FROM_DATE to TO_DATE",
+  "width": "container",
+  "height": 400,
+  "title": "Bushfires in Australia, 1st August 2019 to 30th September 2019",
   "projection": {"type":"mercator"},
   "layer": [
     {
@@ -16,15 +16,14 @@
       "data": {
         "url": "https://raw.githubusercontent.com/Mizugori/FIT3179_DataVis2/master/data/fire_archive_M6_96619.csv"
       },
-      "mark": {"type": "circle", "tooltip": {"content": "data"}},
-      "transform": [{"calculate": "datum.scan*datum.track", "as": "pixel_area"}],
+      "mark": {"type": "circle"},
       "encoding": {
         "longitude": {"field": "longitude", "type": "quantitative"},
         "latitude": {"field": "latitude", "type": "quantitative"},
         "color": {
           "field": "brightness",
           "type": "quantitative",
-          "scale": {"scheme": "viridis"}
+          "scale": {"scheme": "darkred"}
         },
         "opacity": {
           "field": "confidence",

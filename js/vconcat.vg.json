@@ -3,10 +3,13 @@
   "data": {
     "url": "https://raw.githubusercontent.com/Mizugori/FIT3179_DataVis2/master/data/fire_archive_M6_96619.csv"
   },
+  "autosize":{"type": "pad"},
   "vconcat": [
     {
-      "title": "Bushfires in Australia, FROM_DATE to TO_DATE",
+      "title": "Bushfires in Australia",
       "projection": {"type":"mercator"},
+      "width": 400,
+      "height": 400, 
       "layer": [
         {
           "data": {
@@ -26,18 +29,16 @@
             "color": {
               "field": "brightness",
               "type": "quantitative",
-              "scale": {"scheme": "viridis"}
-            },
-            "opacity": {
-              "field": "confidence",
-              "type": "quantitative"
+              "scale": {"scheme": "darkred"}
             }
           }
         }
       ]
     },
     {
-      "title": "Count of bushfires over time; use this graph to select the timeframe",
+      "title": "Use this graph to select the timeframe",
+      "width": 400,
+      "height": 100, 
       "params":[{"name": "time_brush", "select":{"type":"interval", "encodings": ["x"]}}],
       "mark": {"type": "line", "tooltip": {"content": "data"}},
       "encoding": {
@@ -48,21 +49,6 @@
               "title": "Date"
         },
         "y": {"aggregate":"count", "field": "brightness", "title": "Count"}
-      }
-    },
-    {
-      "title": "Day vs Night brightness",
-      "mark": {"type": "line", "tooltip": {"content": "data"}},
-      "encoding": {
-        "x": {"field":"acq_date", 
-              "type": "temporal",
-              "timeUnit": {"unit": "yearmonthdate"},
-              "axis":{"format": "%b/%d/%Y"},
-              "title": "Date",
-              "scale": {"domain": {"param": "time_brush"}}
-        },
-        "y": {"aggregate":"mean", "field": "brightness", "title": "Mean brightness"},
-        "color":{"field":"daynight", "type": "nominal"}
       }
     }
   ],

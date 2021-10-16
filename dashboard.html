@@ -5,31 +5,92 @@
   <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Import PureCSS-->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <!-- CSS file -->
   <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
 </head>
-<body>
+<body> 
+  <div class="page">
+  <div class="pure-g">
+    <div class="pure-u-1-1">
+      <h1 text-align="center">Bushfires in Australia: August 2019 to September 2019</h1>
+      <p>
+        The Australian bushfires of 2019 were some of the most devastating in the history of 
+        the country, causing widespread destruction all across the country and leaving 
+        millions of people in the southern hemisphere swamped in smoke.
+        One of the defining characteristics of the fires was the long timeframe that they
+        burned for.
+      </p> 
+    </div>
+  </div>
 
-    <div id="symbol_map"></div>
+  <div class="pure-g">
+    <div class="pure-u-3-4">
+      <div class="vis_container" id="symbol_map"></div>
+    </div>
+    <div class="pure-u-1-4"> 
+      <div class="description description_right">
+        In a typical year, the fire season in Australia really begins around October in most 
+        states, with some small fires occurring as early as July. However in 2019, 
+        widespread burning occurred throughout parts of Queensland and New South Wales, 
+        during the month of September, with numerous fires in other parts of the country. 
+        The map to the left shows the locations of probable fires in during the months of 
+        August and September in 2019.
+      </div>
+    </div>
+  </div>
 
-    <div id="bushfire_count"></div>
-  
-    <div id="time_series"></div>
-    
-    <div id="combined_graph"></div>
+  <div class="pure-g">
+    <div class="pure-u-1-4"> 
+      <div class="description description_left">
+        Some more filler
+      </div>
+    </div>
+    <div class="pure-u-3-4"> 
+      <div class="vis_container" id="bushfire_count"></div>
+    </div>
+  </div>
+
+  <div class="pure-g">
+    <div class="pure-u-3-4">
+      <div class="vis_container" id="time_series"></div>
+    </div>
+    <div class="pure-u-1-4">
+      <div class="description description_right">
+        Yet more filler
+      </div> 
+    </div> 
+  </div>
+
+  <div class="pure-g">
+    <div class="pure-u-1-4"> 
+      <div class="description description_left">
+        The eastern bloc of text
+      </div>
+
+    </div>
+    <div class="pure-u-3-4">
+      <div class="vis_container" id="combined_graph"></div>
+    </div>
+  </div>
+</div>
 
 <script type="text/javascript"> 
 
-  var fig = "js/symbol_map.vg.json"
+  var fig = "js/symbol_map.vg.json" 
   var fig2 = "js/bushfire_count_timeseries.vg.json"
   var fig3 = "js/time_series.vg.json"
   var fig4 = "js/vconcat.vg.json"
 
-  // vegaEmbed('#symbol_map', fig).then((result)=>{}).catch(console.error)
+  vegaEmbed('#symbol_map', fig).then((result)=>{}).catch(console.error)
   // vegaEmbed("#bushfire_count", fig2).then((result)=>{}).catch(console.error)
   // vegaEmbed("#time_series", fig3).then((result)=>{}).catch(console.error)
   vegaEmbed("#combined_graph", fig4).then((result)=>{}).catch(console.error)
-
 </script>
 </body>
 </html>

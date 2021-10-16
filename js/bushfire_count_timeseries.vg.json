@@ -1,13 +1,12 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 800,
-    "height": 600,
-    "title": "Count of bushfires over time; use this graph to select the timeframe",
-    "params":[{"name": "time_brush", "select":{"type":"interval", "encodings": ["x"]}}],
+    "width": "container",
+    "height": "container",
+    "title": "Count of bushfires over time",
     "layer": [
       {
         "data": {
-          "url": "https://raw.githubusercontent.com/Mizugori/FIT3179_DataVis2/master/data/fire_nrt_M6_96619.csv"
+          "url": "https://raw.githubusercontent.com/Mizugori/FIT3179_DataVis2/master/data/fire_archive_M6_96619.csv"
         },
         "mark": {"type": "line", "tooltip": {"content": "data"}},
         "encoding": {

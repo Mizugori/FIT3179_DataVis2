@@ -1,29 +1,39 @@
-#symbol_map {
-	top:100px;
-	bottom: 100px; 
-	left: 100px;
-	right: 100px;
-	/*height: 1000px;
-	width: 800px;*/
+h1{
+  text-align: center;
 }
 
-#time_series {
-	top: 100px;
-	bottom: 100px; 
-	left: 100px;
-	right: 100px;
-	/*height: 1000px;
-	width: 800px;*/
+body{
+  background-color: lightgray;
 }
 
-#bushfire_count {
-    top: 100px;
-    bottom: 100px;
-    left: 100px;
-    right: 100px
+.pure-g{
+  left:auto;
+  width: 1000px;
+}
+.page{
+  width: 1000px;
+  background-color: white;
+  margin: auto;
+  padding: 50px;
+  padding-top: 35px;
 }
 
-.combined_graph {
-  height: 1000px;
-  width: 800px;
+.vis_container{
+  width: 100%;
+}
+
+.description_left{
+  padding-right: 20px;
+}
+
+.description_right{
+  padding-left: 20px;
+}
+
+.description{
+  margin-top: 0px;
+}
+
+.pure-g{
+  margin-bottom: 25px;
 }
