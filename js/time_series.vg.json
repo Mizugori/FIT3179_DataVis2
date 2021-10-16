@@ -1,26 +1,20 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": "container",
-  "height": "container",
+  "width": 400,
+  "height": 400,
   "title": "INSERT TITLE",
-  "layer": [
-    {
-      "data": {
-        "url": "https://raw.githubusercontent.com/Mizugori/FIT3179_DataVis2/master/data/fire_nrt_M6_96619.csv"
-      },
-      "transform": [
-        {"filter": {"param": "time_brush"}}
-      ],
-      "mark": {"type": "line", "tooltip": {"content": "data"}},
-      "encoding": {
-        "x": {"field":"acq_date", 
-              "type": "temporal",
-              "timeUnit": {"unit": "yearmonthdate"},
-              "axis":{"format": "%b/%d/%Y"}
-        },
-        "y": {"aggregate":"mean", "field": "brightness"},
-          "color": {"field": ""}
-      }
-    }
-  ]
+  "data": {
+    "url": "https://raw.githubusercontent.com/Mizugori/FIT3179_DataVis2/master/data/fire_archive_M6_96619.csv"
+  },
+  "mark": {"type": "line", "tooltip": {"content": "data"}},
+  "encoding": {
+    "x": {
+      "field":"acq_date", 
+      "type": "temporal",
+      "timeUnit": {"unit": "yearmonthdate"},
+      "axis":{"format": "%b/%d/%Y"},
+      "title": "Date"
+    },
+    "y": {"aggregate":"mean", "field": "brightness", "title": "Mean brightness"}
+  }
 }

@@ -68,28 +68,31 @@
   </div>
 
   <div class="pure-g">
-    <div class="pure-u-1-4"> 
+    <div class="pure-u-1-1"> 
       <div class="description description_left">
         The eastern bloc of text
       </div>
-
     </div>
-    <div class="pure-u-3-4">
+  </div>
+
+  <div class="pure-g">
+    <div class="pure-u-1-1">
       <div class="vis_container" id="combined_graph"></div>
     </div>
   </div>
+
 </div>
 
 <script type="text/javascript"> 
 
   var fig = "js/symbol_map.vg.json" 
   var fig2 = "js/bushfire_count_timeseries.vg.json"
-  var fig3 = "js/time_series.vg.json"
+  var fig3 = "js/brightness_vs_radiative_power.vg.json"
   var fig4 = "js/vconcat.vg.json"
 
   vegaEmbed('#symbol_map', fig).then((result)=>{}).catch(console.error)
-  // vegaEmbed("#bushfire_count", fig2).then((result)=>{}).catch(console.error)
-  // vegaEmbed("#time_series", fig3).then((result)=>{}).catch(console.error)
+  vegaEmbed("#bushfire_count", fig2).then((result)=>{}).catch(console.error)
+  vegaEmbed("#time_series", fig3).then((result)=>{}).catch(console.error)
   vegaEmbed("#combined_graph", fig4).then((result)=>{}).catch(console.error)
 </script>
 </body>
