@@ -1,0 +1,32 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 400,
+  "height": 400,
+  "title": "Count of bushfires over time",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Mizugori/FIT3179_DataVis2/master/data/fire_archive_M6_96619.csv"
+  },
+  "layer":[{
+    "mark": {"type": "point", "tooltip": {"content": "data"}, "color":"red"},
+    "encoding": {
+      "x": {
+            "field":"frp", 
+            "type": "quantitative",
+            "title": "Radiative power of fire (MW)"
+      },
+      "y": {"aggregate":"count","field": "bright_t31", "type": "quantitative"}
+    }
+  },
+  {
+    "mark": {"type": "point", "tooltip": {"content": "data"}, "color":"orange"},
+    "encoding": {
+      "x": {
+            "field":"frp", 
+            "type": "quantitative",
+            "title": "Radiative power of fire (MW)"
+      },
+      "y": {"field": "brightness", "type": "quantitative"}
+    }
+  }
+  ]
+}
