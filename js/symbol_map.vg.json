@@ -8,7 +8,7 @@
   "layer": [
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/Mizugori/FIT3179_DataVis2/master/data/AusGeo.geo.json",
+        "url": "https://raw.githubusercontent.com/Mizugori/FIT3179_DataVis2/master/data/Australia.topo.json",
         "format": {"type": "json"}
       },
       "mark": {"type": "geoshape", "fill": "#997f79", "stroke": "white"}
