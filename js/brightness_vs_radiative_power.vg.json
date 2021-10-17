@@ -12,14 +12,15 @@
     "mark": {"type": "point", "tooltip": {"content": "data"}, "color":"orange"},
     "transform": [{"calculate": "log(datum.frp)/LN10", "as":"log_frp"}],
     "encoding": {
-      "x": {
+      "y": {
         "field":"frp", 
         "type": "quantitative",
         "title": "Radiative power of fire (MW)"
       },
-      "y": {
+      "x": {
         "field": "brightness", 
-        "type": "quantitative"
+        "type": "quantitative",
+        "title": "Brightness temperature (K)"
       },
       "color": {
         "field": "log_frp",

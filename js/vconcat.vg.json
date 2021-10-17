@@ -17,16 +17,29 @@
             "url": "https://raw.githubusercontent.com/Mizugori/FIT3179_DataVis2/master/data/Australia.geo.json",
             "format": {"type": "json"}
           },
-          "mark": {"type": "geoshape", "fill": "#997f79", "stroke": "white"}
+          "mark": {
+            "type": "geoshape", 
+            "fill": "#997f79", 
+            "stroke": "white"
+          }
         },
         {
-          "mark": {"type": "circle", "tooltip": {"content": "data"}},
+          "mark": {
+            "type": "circle", 
+            "tooltip": {"content": "data"}
+          },
           "transform": [
             {"filter": {"param": "time_brush"}}
           ],
           "encoding": {
-            "longitude": {"field": "longitude", "type": "quantitative"},
-            "latitude": {"field": "latitude", "type": "quantitative"},
+            "longitude": {
+              "field": "longitude", 
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "latitude", 
+              "type": "quantitative"
+            },
             "color": {
               "field": "brightness",
               "type": "quantitative",
@@ -40,8 +53,19 @@
       "title": "Use this graph to select the timeframe",
       "width": 500,
       "height": 100, 
-      "params":[{"name": "time_brush", "select":{"type":"interval", "encodings": ["x"]}}],
-      "mark": {"type": "line", "tooltip": {"content": "data"}, "stroke": "#c25a17"},
+      "params":[{
+        "name": "time_brush", 
+        "select":{
+          "type":"interval", 
+          "encodings": ["x"]
+        }
+      }],
+      "mark": {
+        "type": "line", 
+        "tooltip": {"content": "data"}, 
+        "stroke": "#c25a17",
+        "interpolate": "natural"
+      },
       "encoding": {
         "x": {"field":"acq_date", 
               "type": "temporal",
@@ -49,9 +73,19 @@
               "axis":{"format": "%b/%d/%Y"},
               "title": "Date"
         },
-        "y": {"aggregate":"count", "field": "brightness", "title": "Number of fires"}
+        "y": {
+          "aggregate":"count", 
+          "field": "brightness", 
+          "title": "Number of fires"
+        }
       }
     }
   ],
-  "config": {"title": {"font": "sans-serif", "fontSize": 14}}
+  "config": {
+    "title": {
+      "font": "sans-serif", 
+      "fontSize": 14
+    },
+    "autosize":"pad"
+  }
 }
