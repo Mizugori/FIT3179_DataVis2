@@ -11,12 +11,8 @@
   {
     "mark": {
       "type": "point", 
-      "color": "orange"
+      "color": "darkorange"
     },
-    "transform": [{
-      "calculate": "log(datum.frp)/LN10", 
-      "as": "log_frp"
-    }],
     "encoding": {
       "tooltip": [
         {"field": "brightness"},
@@ -31,14 +27,7 @@
         "field": "brightness", 
         "type": "quantitative",
         "title": "Brightness temperature (K)"
-      },
-      "color": {
-        "field": "log_frp",
-        "scale":{"scheme": "oranges"},
-        "type": "quantitative",
-        "legend": null
       }
     }
-  }
-  ]
+  }]
 }
