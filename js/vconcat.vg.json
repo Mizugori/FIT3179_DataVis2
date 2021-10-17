@@ -4,11 +4,10 @@
     "url": "https://raw.githubusercontent.com/Mizugori/FIT3179_DataVis2/master/data/fire_archive_M6_96619.csv"
   },
   "background": "#cfcccb",
-  "autosize":{"type": "pad"},
+  "autosize": {"type": "pad"},
   "vconcat": [
     {
-      "title": "Bushfires in Australia",
-      "projection": {"type":"mercator"},
+      "projection": {"type": "mercator"},
       "width": 500,
       "height": 400, 
       "layer": [
@@ -26,7 +25,7 @@
         {
           "mark": {
             "type": "circle", 
-            "tooltip": {"content": "data"}
+            "tooltip": true
           },
           "transform": [
             {"filter": {"param": "time_brush"}}
@@ -53,28 +52,28 @@
       "title": "Use this graph to select the timeframe",
       "width": 500,
       "height": 100, 
-      "params":[{
+      "params": [{
         "name": "time_brush", 
-        "select":{
-          "type":"interval", 
+        "select": {
+          "type": "interval", 
           "encodings": ["x"]
         }
       }],
       "mark": {
         "type": "line", 
-        "tooltip": {"content": "data"}, 
+        "tooltip": true, 
         "stroke": "#c25a17",
         "interpolate": "natural"
       },
       "encoding": {
-        "x": {"field":"acq_date", 
+        "x": {"field": "acq_date", 
               "type": "temporal",
               "timeUnit": {"unit": "yearmonthdate"},
-              "axis":{"format": "%b/%d/%Y"},
+              "axis": {"format": "%b/%d/%Y"},
               "title": "Date"
         },
         "y": {
-          "aggregate":"count", 
+          "aggregate": "count", 
           "field": "brightness", 
           "title": "Number of fires"
         }
@@ -86,6 +85,6 @@
       "font": "sans-serif", 
       "fontSize": 14
     },
-    "autosize":"pad"
+    "autosize": "pad"
   }
 }

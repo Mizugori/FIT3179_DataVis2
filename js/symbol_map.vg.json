@@ -3,7 +3,7 @@
   "width": "container",
   "height": 400,
   "title": "Bushfires in Australia, 1st August 2019 to 30th September 2019",
-  "projection": {"type":"mercator"},
+  "projection": {"type": "mercator"},
   "background": "#cfcccb",
   "layer": [
     {
@@ -11,16 +11,29 @@
         "url": "https://raw.githubusercontent.com/Mizugori/FIT3179_DataVis2/master/data/Australia.geo.json",
         "format": {"type": "json"}
       },
-      "mark": {"type": "geoshape", "fill": "#997f79", "stroke": "white"}
+      "mark": {
+        "type": "geoshape",
+        "fill": "#997f79", 
+        "stroke": "white"
+      }
     },
     {
       "data": {
         "url": "https://raw.githubusercontent.com/Mizugori/FIT3179_DataVis2/master/data/fire_archive_M6_96619.csv"
       },
-      "mark": {"type": "circle"},
+      "mark": {
+        "type": "circle",
+        "tooltip": true
+      },
       "encoding": {
-        "longitude": {"field": "longitude", "type": "quantitative"},
-        "latitude": {"field": "latitude", "type": "quantitative"},
+        "longitude": {
+          "field": "longitude", 
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude", 
+          "type": "quantitative"
+        },
         "color": {
           "field": "brightness",
           "type": "quantitative",

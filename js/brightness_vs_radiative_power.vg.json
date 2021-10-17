@@ -2,18 +2,28 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
   "height": 400,
-  "title": "Count of bushfires over time",
+  "title": "Radiative power of fires compared to brightness",
   "background": "#cfcccb",
   "data": {
     "url": "https://raw.githubusercontent.com/Mizugori/FIT3179_DataVis2/master/data/fire_archive_M6_96619.csv"
   },
-  "layer":[
+  "layer": [
   {
-    "mark": {"type": "point", "tooltip": {"content": "data"}, "color":"orange"},
-    "transform": [{"calculate": "log(datum.frp)/LN10", "as":"log_frp"}],
+    "mark": {
+      "type": "point", 
+      "color": "orange"
+    },
+    "transform": [{
+      "calculate": "log(datum.frp)/LN10", 
+      "as": "log_frp"
+    }],
     "encoding": {
+      "tooltip": [
+        {"field": "brightness"},
+        {"field": "frp"}
+      ], 
       "y": {
-        "field":"frp", 
+        "field": "frp", 
         "type": "quantitative",
         "title": "Radiative power of fire (MW)"
       },
@@ -24,9 +34,9 @@
       },
       "color": {
         "field": "log_frp",
-        "scale":{"scheme":"oranges"},
+        "scale":{"scheme": "oranges"},
         "type": "quantitative",
-        "legend":null
+        "legend": null
       }
     }
   }

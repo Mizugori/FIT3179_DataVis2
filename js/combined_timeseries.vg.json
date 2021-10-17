@@ -3,41 +3,41 @@
   "data": {
     "url": "https://raw.githubusercontent.com/Mizugori/FIT3179_DataVis2/master/data/fire_archive_M6_96619.csv"
   },
-  "background":"#cfcccb",
+  "background": "#cfcccb",
   "vconcat":[{
       "width": "container",
       "height": 200,
       "title": "Count of bushfires over time",
       "mark": {
         "type": "line", 
-        "tooltip": {"content": "data"}, 
-        "interpolate":"natural", 
-        "color":"darkorange"
+        "tooltip": true, 
+        "interpolate": "natural", 
+        "color": "darkorange"
       },
       "encoding": {
         "x": {
-          "field":"acq_date", 
+          "field": "acq_date", 
           "type": "temporal",
           "timeUnit": {"unit": "yearmonthdate"},
           "axis":{"format": "%d %b %Y"},
           "title": "Date"
           },
         "y": {
-          "aggregate":"count", 
+          "aggregate": "count", 
           "field": "brightness", 
           "title": "Number of fires"
         }
       }
     },
     {
-      "title":"Radiative power of fires over time",
-      "width":"container",
-      "height":200,
+      "title": "Radiative power of fires over time",
+      "width": "container",
+      "height": 200,
       "encoding": {
         "x": {
           "field": "acq_date",
           "timeUnit": "yearmonthdate",
-          "axis": {"format":"%d %b %Y"},
+          "axis": {"format": "%d %b %Y"},
           "title": "Date"
         }
       },
@@ -59,9 +59,10 @@
         },
         {
           "mark": {
-            "type":"line", 
-            "interpolate":"natural", 
-            "color":"darkorange"
+            "type": "line", 
+            "interpolate": "natural", 
+            "color": "darkorange",
+            "tooltip": true
           },
           "encoding": {
             "y": {
