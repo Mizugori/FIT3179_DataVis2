@@ -5,11 +5,11 @@
   },
   "background": "#cfcccb",
   "autosize":{"type": "pad"},
-  "hconcat": [
+  "vconcat": [
     {
       "title": "Bushfires in Australia",
       "projection": {"type":"mercator"},
-      "width": 400,
+      "width": 500,
       "height": 400, 
       "layer": [
         {
@@ -38,8 +38,8 @@
     },
     {
       "title": "Use this graph to select the timeframe",
-      "width": 400,
-      "height": 400, 
+      "width": 500,
+      "height": 100, 
       "params":[{"name": "time_brush", "select":{"type":"interval", "encodings": ["x"]}}],
       "mark": {"type": "line", "tooltip": {"content": "data"}, "stroke": "#c25a17"},
       "encoding": {
